@@ -9,7 +9,22 @@ RSpec.describe Encryptor do
     expect(@encryptor).to be_a Encryptor
   end
 
-  
+  it "has a message" do
+    expect(@encryptor.message).to eq "hello world"
+  end
+
+  it "has a key" do
+    expect(@encryptor.key).to eq "02715"
+  end
+
+  it "has a date" do
+    expect(@encryptor.date).to eq "040895"
+  end
+
+  it "has a letter array" do
+    expect(@encryptor.letter_array).to eq ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+  end
+
 
   it "can generate keys" do
     @encryptor.key_generator

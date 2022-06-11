@@ -1,6 +1,6 @@
 class Encryptor
 
-  attr_reader :letter_array, :keys, :offsets
+  attr_reader :message, :key, :date, :letter_array, :keys, :offsets
 
   def initialize(message, key, date)
     @message = message
