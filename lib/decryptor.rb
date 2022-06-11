@@ -6,6 +6,7 @@ class Decryptor
     @message = message
     @key = key
     @date = date
+    @letter_array = ("a".."z").to_a << " "
   end
-  
+
 end
