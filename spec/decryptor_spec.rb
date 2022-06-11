@@ -36,4 +36,8 @@ RSpec.describe Decryptor do
       expect(@decryptor.offsets).to eq({:a_offset=>3, :b_offset=>27, :c_offset=>73, :d_offset=>20})
     end
 
+    it "can decrypt a message" do
+      expect(@decryptor.decrypt).to eq({decryption: "hello world", key: "02715", date: "040895"})
+    end
+
   end

@@ -26,4 +26,35 @@ class Decryptor
     @offsets[:d_offset] = (@keys[:d_key] + offset[3].to_i)
   end
 
+  def decrypt
+    key_generator
+    offset_generator
+    index = 0
+    decryption = @message.chars.map do |c|
+    if ([(32..96).to_a, (123..126).to_a].flatten).include?(c.ord)
+      index += 1
+      c
+    else
+      if index == 0
+        index += 1
+        @letter_array.rotate(c.ord - 97).rotate(-(@offsets[:a_offset]))[0]
+      elsif index == 1
+        index += 1
+        @letter_array.rotate(c.ord - 97).rotate(-(@offsets[:b_offset]))[0]
+      elsif index == 2
+        index += 1
+        @letter_array.rotate(c.ord - 97).rotate(-(@offsets[:c_offset]))[0]
+      elsif index == 3
+        index = 0
+        @letter_array.rotate(c.ord - 97).rotate(-(@offsets[:d_offset]))[0]
+        end
+      end
+    end.join
+    output = Hash.new
+    output[:decryption] = decryption
+    output[:key] = @key
+    output[:date] = @date
+    output
+  end
+
 end
