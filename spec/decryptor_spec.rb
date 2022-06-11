@@ -22,7 +22,12 @@ RSpec.describe Decryptor do
     end
 
     it "has a letter array" do
-      expect(@encryptor.letter_array).to eq ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+      expect(@decryptor.letter_array).to eq ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+    end
+
+    it "can generate keys" do
+      @decryptor.key_generator
+      expect(@decryptor.keys).to eq({:a_key=>2, :b_key=>27, :c_key=>71, :d_key=>15})
     end
 
   end
