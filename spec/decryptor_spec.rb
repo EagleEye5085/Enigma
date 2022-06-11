@@ -9,4 +9,16 @@ RSpec.describe Decryptor do
       expect(@decryptor).to be_a Decryptor
     end
 
+    it "has a message" do
+      expect(@decryptor.message).to eq "keder ohulw"
+    end
+
+    it "has a key" do
+      expect(@decryptor.key).to eq "02715"
+    end
+
+    it "has a date" do
+      expect(@decryptor.date).to eq "040895"
+    end
+
   end

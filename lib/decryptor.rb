@@ -7,4 +7,5 @@ class Decryptor
     @key = key
     @date = date
   end
+  
 end
