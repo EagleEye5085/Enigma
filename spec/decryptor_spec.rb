@@ -26,12 +26,12 @@ RSpec.describe Decryptor do
     end
 
     it "can generate keys" do
-      @decryptor.key_generator
+      @decryptor.keys_generator
       expect(@decryptor.keys).to eq({:a_key=>2, :b_key=>27, :c_key=>71, :d_key=>15})
     end
 
     it "can generate offsets" do
-      @decryptor.key_generator
+      @decryptor.keys_generator
       @decryptor.offset_generator
       expect(@decryptor.offsets).to eq({:a_offset=>3, :b_offset=>27, :c_offset=>73, :d_offset=>20})
     end
