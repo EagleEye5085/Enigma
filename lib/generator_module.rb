@@ -1,3 +1,4 @@
+require 'date'
 module GeneratorModule
 
   def key_generator
@@ -5,7 +6,7 @@ module GeneratorModule
   end
 
   def date_generator
-    Date.parse(Date.today.to_s).strftime('%d/%m/%y').delete "/"
+    @date = Date.parse(Date.today.to_s).strftime('%d/%m/%y').delete "/"
   end
 
   def keys_generator

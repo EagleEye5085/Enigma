@@ -12,4 +12,9 @@ RSpec.describe GeneratorModule do
     expect(@encryptor.key.length).to eq 5
   end
 
+  it "can generate a date" do
+    @encryptor.date_generator
+    expect(@encryptor.date.length).to eq 6
+  end
+
 end

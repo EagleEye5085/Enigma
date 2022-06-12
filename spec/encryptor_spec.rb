@@ -38,7 +38,6 @@ RSpec.describe Encryptor do
   end
 
   it "can encrypt a message" do
-    # require 'pry'; binding.pry
     expect(@encryptor.encrypt).to eq({encryption: "keder ohulw", key: "02715", date: "040895"})
   end
 end
