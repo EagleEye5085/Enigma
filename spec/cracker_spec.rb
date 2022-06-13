@@ -9,4 +9,8 @@ RSpec.describe Cracker do
       expect(@cracker).to be_a Cracker
     end
 
+    it "has a message" do
+      expect(@cracker.message).to eq "vjqtbeaweqihssi"
+    end
+
   end
