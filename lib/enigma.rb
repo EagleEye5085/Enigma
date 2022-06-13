@@ -1,5 +1,5 @@
-require 'encryptor'
-require 'decryptor'
+require_relative 'encryptor'
+require_relative 'decryptor'
 
 class Enigma
 
