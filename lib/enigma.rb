@@ -1,5 +1,8 @@
+
 require_relative 'encryptor'
 require_relative 'decryptor'
+require_relative 'cracker'
+
 
 class Enigma
 
@@ -13,6 +16,10 @@ class Enigma
 
   def decrypt(message, key, date =nil)
     Decryptor.new(message, key, date).decrypt
+  end
+
+  def crack(message, date)
+    Cracker.new(message, date).crack
   end
 
 end
