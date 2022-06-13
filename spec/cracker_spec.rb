@@ -13,4 +13,8 @@ RSpec.describe Cracker do
       expect(@cracker.message).to eq "vjqtbeaweqihssi"
     end
 
+    it "has a date" do
+      expect(@cracker.date).to eq "291018"
+    end
+
   end
