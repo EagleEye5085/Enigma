@@ -1,4 +1,4 @@
-require 'generator_module'
+require_relative 'generator_module'
 
 class Encryptor
   include GeneratorModule
@@ -19,8 +19,8 @@ class Encryptor
     offsets = offset_generator
     index = 0
     encryption = @message.chars.map do |c|
-    if ([(33..96).to_a, (123..126).to_a].flatten).include?(c.ord)
-        c
+    if !@letter_array.include?(c)
+      c
     else
       if c.ord == 32
         c = "{"
