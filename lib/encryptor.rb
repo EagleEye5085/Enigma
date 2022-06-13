@@ -12,14 +12,13 @@ class Encryptor
   end
 
   def encrypt
-
     key_generator if @key == nil
     date_generator if @date == nil
     letters = letter_array_generator
     offsets = offset_generator
     index = 0
     encryption = @message.chars.map do |c|
-    if ([(33..96).to_a, (123..126).to_a].flatten).include?(c.ord)
+    if !letters.include?(c)
         c
     else
       if c.ord == 32
