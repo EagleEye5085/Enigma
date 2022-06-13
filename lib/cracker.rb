@@ -1,4 +1,4 @@
-require 'decryptor'
+require_relative 'decryptor'
 
 class Cracker < Decryptor
 

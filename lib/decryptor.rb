@@ -1,4 +1,4 @@
-require 'generator_module'
+require_relative 'generator_module'
 
 class Decryptor
   include GeneratorModule
@@ -18,8 +18,13 @@ class Decryptor
     offsets = offset_generator
     index = 0
     decryption = @message.chars.map do |c|
+<<<<<<< HEAD
     if !letters.include?(c)
         c
+=======
+    if !@letter_array.include?(c)
+      c
+>>>>>>> f96ddefe2fecb98af66c263e7ae7d24d1defff14
     else
       if c.ord == 32
         c = "{"

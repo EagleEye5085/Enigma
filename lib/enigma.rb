@@ -1,6 +1,7 @@
-require 'encryptor'
-require 'decryptor'
-require 'cracker'
+require_relative 'encryptor'
+require_relative 'decryptor'
+require_relative 'cracker'
+
 
 class Enigma
 

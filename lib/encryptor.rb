@@ -1,4 +1,4 @@
-require 'generator_module'
+require_relative 'generator_module'
 
 class Encryptor
   include GeneratorModule
