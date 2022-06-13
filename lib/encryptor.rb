@@ -15,28 +15,32 @@ class Encryptor
   end
 
   def encrypt
+
     key_generator if @key == nil
     date_generator if @date == nil
     keys_generator
     offset_generator
     index = 0
     encryption = @message.chars.map do |c|
-    if ([(32..96).to_a, (123..126).to_a].flatten).include?(c.ord)
-      index += 1
+# require 'pry'; binding.pry
+    if ([(33..96).to_a, (123..126).to_a].flatten).include?(c.ord)
       c
     else
+      if c.ord == 32
+        c = "{"
+      end
       if index == 0
         index += 1
-        @letter_array.rotate(c.ord - 97).rotate(@offsets[:a_offset])[0]
+        @letter_array.rotate(c.ord - 97 + @offsets[:a_offset])[0]
       elsif index == 1
         index += 1
-        @letter_array.rotate(c.ord - 97).rotate(@offsets[:b_offset])[0]
+        @letter_array.rotate(c.ord - 97 + @offsets[:b_offset])[0]
       elsif index == 2
         index += 1
-        @letter_array.rotate(c.ord - 97).rotate(@offsets[:c_offset])[0]
+        @letter_array.rotate(c.ord - 97 + @offsets[:c_offset])[0]
       elsif index == 3
         index = 0
-        @letter_array.rotate(c.ord - 97).rotate(@offsets[:d_offset])[0]
+        @letter_array.rotate(c.ord - 97 + @offsets[:d_offset])[0]
         end
       end
     end.join
