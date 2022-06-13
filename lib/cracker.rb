@@ -1,3 +1,5 @@
+require 'decryptor'
+
 class Cracker
 
     attr_reader :message, :date
