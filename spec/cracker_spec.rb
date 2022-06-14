@@ -22,4 +22,8 @@ RSpec.describe Cracker do
       expect(@cracker.crack).to eq ({:date=>"291018", :decryption=>"hello world end", :key=>"08304"})
     end
 
+    it "gives message when crack fails" do
+      expect(@cracker2.crack).to eq "wrong message or date"
+    end
+
   end

@@ -17,12 +17,19 @@ class Cracker < Decryptor
       decrypted_message = decrypt[:decryption]
       if decrypted_message[-4..-1] == " end"
         break
+      elsif @key == "99999"
+        break
       else
         @counter = @counter.rotate(1)
         @key = @counter[0]
       end
     end
-    decrypt
+    if @key == "99999"
+      return p "wrong message or date"
+    end
+    if @key < "999999"
+      return decrypt
+    end
   end
 
 end
