@@ -1,4 +1,5 @@
 require 'date'
+
 module GeneratorModule
 
   def letter_array_generator

@@ -2,9 +2,7 @@ require_relative 'encryptor'
 require_relative 'decryptor'
 require_relative 'cracker'
 
-
 class Enigma
-
 
   def initialize
   end

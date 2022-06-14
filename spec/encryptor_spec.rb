@@ -3,6 +3,7 @@ require './lib/encryptor'
 RSpec.describe Encryptor do
   before :each do
     @encryptor = Encryptor.new("hello world", "02715", "040895")
+    @encryptor2 = Encryptor.new("hello, world!", "02715", "040895")
   end
 
   it "is an instance of an encryptor" do
@@ -24,4 +25,9 @@ RSpec.describe Encryptor do
   it "can encrypt a message" do
     expect(@encryptor.encrypt).to eq({encryption: "keder ohulw", key: "02715", date: "040895"})
   end
+
+  it "can encrypt a message with a special charecter" do
+    expect(@encryptor2.encrypt).to eq({encryption: "keder, ohulw!", key: "02715", date: "040895"})
+  end
+  
 end

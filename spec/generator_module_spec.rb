@@ -1,7 +1,6 @@
 require './lib/generator_module'
 require './lib/encryptor'
 
-
 RSpec.describe GeneratorModule do
   before :each do
     @encryptor = Encryptor.new(message = nil, key = ("01234"), date = ("090588"))

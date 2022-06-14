@@ -3,6 +3,7 @@ require './lib/decryptor'
 RSpec.describe Decryptor do
   before :each do
       @decryptor = Decryptor.new("keder ohulw", "02715", "040895")
+      @decryptor2 = Decryptor.new("keder, ohulw!", "02715", "040895")
     end
 
     it "is an instance of a decryptor" do
@@ -25,4 +26,8 @@ RSpec.describe Decryptor do
       expect(@decryptor.decrypt).to eq({decryption: "hello world", key: "02715", date: "040895"})
     end
 
+    it "can decrypt a message with a special charecter" do
+      expect(@decryptor2.decrypt).to eq({decryption: "hello, world!", key: "02715", date: "040895"})
+    end
+    
   end

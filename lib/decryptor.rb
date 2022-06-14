@@ -9,7 +9,6 @@ class Decryptor
     @message = message
     @key = key
     @date = date
-
   end
 
   def decrypt

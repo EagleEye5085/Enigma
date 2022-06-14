@@ -3,6 +3,7 @@ require './lib/cracker'
 RSpec.describe Cracker do
   before :each do
     @cracker = Cracker.new("vjqtbeaweqihssi", "291018")
+    @cracker2 = Cracker.new("vjqtbeaweqihssi", "291020")
   end
 
     it "is an instance of a cracker" do
@@ -20,6 +21,5 @@ RSpec.describe Cracker do
     it "can crack a message" do
       expect(@cracker.crack).to eq ({:date=>"291018", :decryption=>"hello world end", :key=>"08304"})
     end
-
 
   end
