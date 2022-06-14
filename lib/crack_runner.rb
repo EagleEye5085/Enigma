@@ -7,8 +7,7 @@ incoming_text = handle.read.downcase.chomp
 
 handle.close
 
-decryption = Enigma.new.crack(incoming_text, ARGV[2], ARGV[3])
-# require 'pry'; binding.pry
+decryption = Enigma.new.crack(incoming_text, ARGV[2])
 writer = File.open(ARGV[1], "w")
 
 writer.write(decryption[:decryption])

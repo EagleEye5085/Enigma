@@ -8,7 +8,7 @@ class Cracker < Decryptor
     @message = message
     @date = date
     @key = "00000"
-    @counter = Array.new(99999) { |i| "%05d" % i }
+    @counter = Array.new(100000) { |i| "%05d" % i }
   end
 
   def crack
@@ -17,7 +17,7 @@ class Cracker < Decryptor
       decrypted_message = decrypt[:decryption]
       if decrypted_message[-4..-1] == " end"
         break
-      elsif key == "99999"
+      elsif @key == "99999"
         puts "error wrong message or date"
         break
       else
